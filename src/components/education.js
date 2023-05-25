@@ -1,6 +1,6 @@
 import React from "react";
 
-const Component2 = (props) => {
+const Education = (props) => {
     const { /* Second component object */ } = props;
 
     // Return School Name, Title of Study, Date of Study
@@ -10,4 +10,4 @@ const Component2 = (props) => {
     );
 }
 
-export default Component2;
+export default Education;

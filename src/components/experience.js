@@ -1,6 +1,6 @@
 import React from "react";
 
-const Component3 = (props) => {
+const Experience = (props) => {
     const { /* Third component object */ } = props;
 
     // Return add practical experience (company name, position, tasks of job, when worked in that company)
@@ -10,4 +10,4 @@ const Component3 = (props) => {
     );
 }
 
-export default Component3;
+export default Experience;
