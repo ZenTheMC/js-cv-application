@@ -1,23 +1,13 @@
 import React from "react";
 
-const Personal = (props) => {
-    const {  } = props;
-
-    // Return Name, Email, Phone #
-    return (
-        <div>
-            <form id="personal-form">
-                <label for="name">Your Name</label>
-                <input type="text" id="name"/>
-                <label for="email">Your Email</label>
-                <input type="text" id="email"/>
-                <label for="number">Your Phone Number</label>
-                <input type="text" id="number"/>
-                <label for="personal-button">Submit Personal Information</label>
-                <button type="submit" id="personal-button">Submit</button>
-            </form>
-        </div>
-    );
-}
+const Personal = ({ data, handleChange }) => (
+// Return Name, Email, Phone #
+    <div>
+        <h2>General Information</h2>
+            <input name="name" value={data.name} onChange={handleChange} placeholder="Name" />
+            <input name="email" value={data.email} onChange={handleChange} placeholder="Email" />
+            <input name="phoneNumber" value={data.phoneNumber} onChange={handleChange} placeholder="Phone Number" />
+    </div>
+);
 
 export default Personal;

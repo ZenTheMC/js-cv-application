@@ -1,39 +1,79 @@
 import React, { Component } from 'react';
+import Personal from './components/personal';
+import Education from './components/education';
+import Experience from './components/experience';
+
 
 class App extends Component {
   constructor(props) {
     super(props);
 
     this.state = {
-      // Components that are technically objects need to be defined here
+      // Objects/Components and the objects inside them defined here, to show what "states" will be targets
+      personal: {
+        name: "",
+        email: "",
+        phoneNumber: ""
+      },
+      education: {
+        schoolName: "",
+        titleOfStudy: "",
+        dateOfStudy: ""
+      },
+      experience: {
+        companyName: "",
+        positionTitle: "",
+        mainTasks: "",
+        dateFrom: "",
+        dateUntil: ""
+      },
+      submitted: false
     };
 
-    // Methods that include next line as a direct child
-    this.setState(state => ({
-      // The previously defined component objects implemented logic(if/then, etc)
-    }));
+    // Method that updates the state when a form field is changed
+    handleChange = (section) => (event) => {
+      this.setState({
+        [section]: {
+          ...this.state[section],
+          [event.target.name]: event.target.value
+        }
+      });
+    }
 
-    // Methods that include next line as a direct child
-    this.setState(state => ({
-      // The previously defined component objects implemented logic(if/then, etc)
-    }));
+    // Called when form submits: Prevents default form submit+set submit flag to true
+    handleSubmit = (event) => {
+      event.preventDefault();
+      this.setState({ submitted: true });
+    }
 
-    // Methods that include next line as a direct child
-    this.setState(state => ({
-      // The previously defined component objects implemented logic(if/then, etc)
-    }));
+    // called when Edit button click: Submit flag to false+allow form edit
+    handleEdit = () => {
+      this.setState({ submitted: false });
+    }
+
   };
 
   // The stuff that will be rendered on the webpage, as HTML-like items
   render() {
-    const { /* Component objects at start list for deconstruction*/ } = this.state;
+    const { personal, education, experience, submitted } = this.state;
 
     return (
       <div>
-        CV App
+        {!submitted ? (
+          <form onSubmit={this.handleSubmit}>
+            <Personal data={personal} handleChange={this.handleChange('personal')} />
+            <Education data={education} handleChange={this.handleChange('education')} />
+            <Experience data={experience} handleChange={this.handleChange('experience')} />
+            <button type="submit">Submit</button>
+          </form>
+        ) : (
+          <div>
+            <button onClick={this.handleEdit}>Edit</button>
+          </div>
+        )}
       </div>
     );
-  };
+  }
 }
 
 export default App
