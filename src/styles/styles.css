@@ -1,0 +1,48 @@
+.cv-form {
+    width: 600px;
+    margin: 0 auto;
+  }
+  
+  .cv-form h2 {
+    font-size: 24px;
+    margin-bottom: 10px;
+  }
+  
+  .cv-form input {
+    display: block;
+    width: 100%;
+    margin-bottom: 10px;
+    padding: 10px;
+    font-size: 16px;
+  }
+  
+  .cv-form button {
+    display: block;
+    width: 100%;
+    padding: 10px;
+    font-size: 16px;
+    background-color: #007BFF;
+    color: white;
+    border: none;
+    cursor: pointer;
+  }
+  
+  .cv-form button:hover {
+    background-color: #0056b3;
+  }
+
+  .edit-button {
+    display: block;
+    width: 100px;
+    padding: 10px;
+    font-size: 16px;
+    background-color: #007BFF;
+    color: white;
+    border: none;
+    cursor: pointer;
+    margin: 20px auto;
+  }
+  
+  .edit-button:hover {
+    background-color: #0056b3;
+  }

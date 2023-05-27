@@ -1,7 +1,7 @@
 import React from "react";
 
 const Personal = ({ data, handleChange }) => (
-// Return Name, Email, Phone #
+// Return Name, Email, Phone Number
     <div>
         <h2>General Information</h2>
             <input name="name" value={data.name} onChange={handleChange} placeholder="Name" />
