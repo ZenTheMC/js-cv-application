@@ -1,3 +1,7 @@
+//--------------------------------------------------------------------------------------//
+
+// Class Components Structure
+/*
 import React from "react";
 
 const Experience = ({ data, handleChange }) => (
@@ -13,3 +17,28 @@ const Experience = ({ data, handleChange }) => (
 );
 
 export default Experience;
+*/
+// Class Components Structure
+
+//--------------------------------------------------------------------------------------//
+
+// Functional Components Structure
+import React from 'react';
+
+const Experience = ({ experience, handleChange }) => {
+  return (
+    <div className='cv-form'>
+      <h1>Experience</h1>
+      <input type="text" name="company" value={experience.company} onChange={handleChange} placeholder="Company" />
+      <input type="text" name="position" value={experience.position} onChange={handleChange} placeholder="Position" />
+      <input type="text" name="mainTasks" value={experience.mainTasks} onChange={handleChange} placeholder="Main Tasks" />
+      <input type="date" name="startDate" value={experience.startDate} onChange={handleChange} placeholder="Start Date" />
+      <input type="date" name="endDate" value={experience.endDate} onChange={handleChange} placeholder="End Date" />
+    </div>
+  );
+};
+
+export default Experience;
+// Functional Components Structure
+
+//--------------------------------------------------------------------------------------//

@@ -1,3 +1,7 @@
+//--------------------------------------------------------------------------------------//
+
+// Class Components Structure
+/*
 import React from "react";
 
 const Personal = ({ data, handleChange }) => (
@@ -11,3 +15,26 @@ const Personal = ({ data, handleChange }) => (
 );
 
 export default Personal;
+*/
+// Class Components Structure
+
+//--------------------------------------------------------------------------------------//
+
+// Functional Components Structure
+import React from 'react';
+
+const Personal = ({ personal, handleChange }) => {
+  return (
+    <div className='cv-form'>
+      <h1>Personal Information</h1>
+      <input type="text" name="name" value={personal.name} onChange={handleChange} placeholder="Name" />
+      <input type="text" name="email" value={personal.email} onChange={handleChange} placeholder="Email" />
+      <input type="text" name="phone" value={personal.phone} onChange={handleChange} placeholder="Phone" />
+    </div>
+  );
+};
+
+export default Personal;
+// Functional Components Structure
+
+//--------------------------------------------------------------------------------------//
